@@ -24,8 +24,17 @@ public class App {
     
     // add and implement the other methods you need in this area below!
     
-  
+  public String getUserName() {
+    return "Tristan";
 
+    
+}
+    public void printGreeting (String userName) { 
+        System.out.println ( "Greetings " + userName );
+
+    }
+    
+    
     /* DO NOT TOUCH OR EDIT THE METHOD BELOW! ADD NO CODE BELOW THIS LINE */
     public static void main(String[] args) throws Exception {
         new App().start();
