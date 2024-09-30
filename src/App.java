@@ -44,11 +44,23 @@ public class App {
         System.out.println("Greetings " + userName +"!");
 
     }
+/* this method actually creates the madlib */
+public void doMadlib() {
+    Scanner input = new Scanner(System.in);
+    String category;
 
-    public void doMadlib() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("choose a category: 'Basketball' or 'Space'"); 
-       String category = input.nextLine();
+    /* learnt this loop from stackoverflow */
+    // Loop until a valid category is entered
+    while (true) {
+        System.out.println("Choose a category: 'Basketball' or 'Space'"); 
+        category = input.nextLine();
+
+        if (category.equalsIgnoreCase("Basketball") || category.equalsIgnoreCase("Space")) {
+            break; // Valid category entered, breaks the loop 
+        } else {
+            System.out.println("Invalid category. Please choose either 'Basketball' or 'Space'.");
+        }
+    }
         System.out.println("Enter a verb:");
         String verb = input.nextLine(); 
         System.out.println("Enter a noun:");
@@ -73,11 +85,11 @@ public class App {
     
     /* Joao Porto taught me about this code. I also used the website stackoverflow to further understand it */ 
     Random random = new Random();
-    int madLib = random.nextInt(2) + 1; // generates random number 1 or 2 
+    int madLib = random.nextInt(2) + 1; // generates random number 1 or 2 and saves it to int madLib
 
-/* if/else statement displays story prints based on users choice */
+/* if/else statement displays story based on users choice of category, and outputs a randomly selected story inside that category  */
 // W3 schools helped me understand this code
-   if (category.equals( "Basketball"))
+   if (category.equals( "Basketball")) {
     if (madLib == 1) {
         System.out.println("Interesting choices! Here is your MadLib Basketball story:");
         System.out.println(person + " dribbled the " + noun + " down the court with precision. With just seconds left, "
@@ -85,18 +97,16 @@ public class App {
                 + pronoun + " " + verb + " past the defense and " + verb2 + " an incredible shot from the three-point line. "
                 + secondPerson + " leapt to their feet and screamed, 'That was the most " + adverb2 + " shot I've ever seen!' "
                 + "The crowd erupted, knowing this would be a game they would never forget.");
-    }else if ( madLib == 2) {
+   
+    } else if ( madLib == 2) {
+        System.out.println("Interesting choices! Here is your MadLib Basketball story:");
         System.out.println( person + " made a spectacular play, using a " + noun + " to pass to " + secondPerson + ". With " + pronoun + " strategy, "
         + secondPerson + " swiftly " + verb + " and took a shot, scoring with " + adverb + " flair! The crowd went wild, as " 
         + pronoun2 + " cheered for the unforgettable moment. 'What a " + adverb2 + " performance!' they shouted.");
 
 
-    } else {
-        System.out.println("Invalid madLib value.");
-    } 
-    
-    
-    else if (category.equals("Space")) {
+    }
+}   else if (category.equals("Space")) {
         if (madLib == 1) { 
         System.out.println("Interesting choices! Here is your MadLib space adventure:");
         System.out.println(person + " piloted the " + noun + " through the vast expanse of space. Suddenly, " + pronoun + " encountered a "
@@ -106,15 +116,13 @@ public class App {
                    }   
                    
         else if ( madLib == 2) { 
+            System.out.println("Interesting choices! Here is your MadLib space adventure:");
             System.out.println( person + " discovered a new planet while " + verb + "ing in their " + noun + ". Suddenly, " + pronoun + " spotted a " 
             + noun2 + " that was " + adverb + " orbiting a nearby star. " + pronoun + " quickly " + verb2 + " to investigate, and as "
             + secondPerson + " joined, they both exclaimed, 'This is the most " + adverb2 + " discovery ever!'"); 
 
         }
-         else {
-        System.out.println("Invalid category. Please choose Basketball or Space.");
-    }
-} 
+    } 
 }
 
     
