@@ -50,7 +50,7 @@ public class App {
         Scanner input = new Scanner(System.in);
         String category;
 
-        /* learnt this loop from stackoverflow */
+        /* learnt this loop from stackoverflow (https://stackoverflow.com/questions/20670824/java-break-statement-in-if-else) and Javatpoint( https://www.javatpoint.com/java-if-else) */
         // Loop until a valid category is entered. stops user from not choosing a
         // category
         while (true) {
@@ -95,7 +95,7 @@ public class App {
          * if/else statement displays story based on users choice of category, and
          * outputs a randomly selected story inside that category
          */
-        // W3 schools helped me understand this code
+        // W3 schools helped me understand this code (https://www.w3schools.com/java/java_conditions_elseif.asp)
         if (category.equals("Basketball")) {
             if (madLib == 1) {
                 System.out.println("Interesting choices! Here is your MadLib Basketball story:");
@@ -144,7 +144,7 @@ public class App {
         }
     }
 
-    /* method asks players if they would like to play again */
+    /** method asks players if they would like to play again */
     public String restartGame() {
         Scanner input = new Scanner(System.in);
         System.out.println("would you like to play again? (yes or no)");
